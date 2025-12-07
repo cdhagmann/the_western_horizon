@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Western Horizon — Campaign Framework</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Parchment & Ink palette */
+            --parchment-light: #f5f0e6;
+            --parchment: #ebe3d5;
+            --parchment-dark: #d9cfc0;
+            --ink: #2c2416;
+            --ink-light: #4a4035;
+            --ink-faded: #6b5f50;
+            --accent-gold: #9c7a3c;
+            --accent-copper: #8b5a2b;
+            --accent-rust: #a04030;
+            --success: #4a7c59;
+            --pending: #8b7355;
+            
+            /* Typography */
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Crimson Pro', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            
+            /* Spacing */
+            --sidebar-width: 280px;
+            --content-max: 900px;
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--spacing-xl);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--parchment);
+            background-image: 
+                radial-gradient(ellipse at 20% 0%, rgba(156, 122, 60, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 100%, rgba(139, 90, 43, 0.06) 0%, transparent 50%);
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: linear-gradient(180deg, var(--ink) 0%, #1a1610 100%);
+            color: var(--parchment);
+            overflow-y: auto;
+            z-index: 100;
+            padding: var(--spacing-lg) 0;
+            border-right: 3px solid var(--accent-gold);
+        }
+
+        .sidebar-header {
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-align: center;
+            border-bottom: 1px solid rgba(235, 227, 213, 0.15);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .sidebar-header h1 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0 0 var(--spacing-xs);
+            color: var(--accent-gold);
+        }
+
+        .sidebar-header .subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        .progress-bar {
+            margin: var(--spacing-md) var(--spacing-lg);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(235, 227, 213, 0.05);
+            border-radius: 4px;
+        }
+
+        .progress-bar-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .progress-bar-track {
+            height: 4px;
+            background: rgba(235, 227, 213, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-copper));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar-text {
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+            margin-top: var(--spacing-xs);
+            opacity: 0.6;
+        }
+
+        .nav-section {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .nav-section-title {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            color: var(--parchment);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: rgba(235, 227, 213, 0.08);
+            border-left-color: var(--accent-gold);
+        }
+
+        .nav-link.active {
+            background: rgba(235, 227, 213, 0.1);
+            border-left-color: var(--accent-gold);
+        }
+
+        .nav-link .status {
+            margin-left: auto;
+            font-size: 0.7rem;
+            font-family: var(--font-mono);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .nav-link .status.complete {
+            background: rgba(74, 124, 89, 0.3);
+            color: #8fc99f;
+        }
+
+        .nav-link .status.partial {
+            background: rgba(156, 122, 60, 0.3);
+            color: #d4b878;
+        }
+
+        .nav-link .status.pending {
+            background: rgba(139, 115, 85, 0.2);
+            color: rgba(235, 227, 213, 0.5);
+        }
+
+        /* Sub-navigation (indented) */
+        .nav-link.sub {
+            padding-left: calc(var(--spacing-lg) + var(--spacing-md));
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: var(--sidebar-width);
+            padding: var(--spacing-2xl);
+            min-height: 100vh;
+        }
+
+        .content {
+            max-width: var(--content-max);
+            margin: 0 auto;
+        }
+
+        /* Hero Header */
+        .hero {
+            text-align: center;
+            padding: var(--spacing-2xl) 0;
+            margin-bottom: var(--spacing-2xl);
+            border-bottom: 2px solid var(--parchment-dark);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '✦';
+            display: block;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin: 0 0 var(--spacing-sm);
+            color: var(--ink);
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--ink-faded);
+            margin: 0;
+        }
+
+        .hero .version {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--ink-faded);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-2xl);
+            border-bottom: 1px solid var(--parchment-dark);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--ink);
+            margin: 0 0 var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--accent-gold);
+            display: inline-block;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin: var(--spacing-xl) 0 var(--spacing-md);
+        }
+
+        h4 {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--ink-light);
+            margin: var(--spacing-lg) 0 var(--spacing-sm);
+        }
+
+        p {
+            margin: 0 0 var(--spacing-md);
+        }
+
+        /* Placeholder Content */
+        .placeholder {
+            background: 
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(156, 122, 60, 0.03) 10px,
+                    rgba(156, 122, 60, 0.03) 20px
+                ),
+                var(--parchment-light);
+            border: 2px dashed var(--parchment-dark);
+            border-radius: 6px;
+            padding: var(--spacing-xl);
+            text-align: center;
+            color: var(--ink-faded);
+        }
+
+        .placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.5;
+        }
+
+        .placeholder-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .placeholder-text {
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .placeholder-source {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid var(--parchment-dark);
+        }
+
+        /* Callout Boxes */
+        .callout {
+            background: var(--parchment-light);
+            border-left: 4px solid var(--accent-gold);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .callout.philosophy {
+            border-left-color: var(--accent-copper);
+        }
+
+        .callout.tip {
+            border-left-color: var(--success);
+        }
+
+        .callout.warning {
+            border-left-color: var(--accent-rust);
+        }
+
+        .callout-title {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 0 0 var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            font-size: 0.95rem;
+        }
+
+        th {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: left;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--ink);
+            color: var(--parchment);
+            border: 1px solid var(--ink);
+        }
+
+        td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--parchment-dark);
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) td {
+            background: var(--parchment-light);
+        }
+
+        /* Code/Reference blocks */
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            background: var(--parchment-light);
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid var(--parchment-dark);
+        }
+
+        pre {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            background: var(--ink);
+            color: var(--parchment);
+            padding: var(--spacing-md);
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: var(--spacing-md) 0;
+        }
+
+        pre code {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        /* Checklists */
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xs) 0;
+        }
+
+        .checklist-box {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--ink-faded);
+            border-radius: 3px;
+            flex-shrink: 0;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .checklist-box.done {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .checklist-box.done::after {
+            content: '✓';
+        }
+
+        /* Procedure Steps */
+        .procedure {
+            counter-reset: step;
+        }
+
+        .procedure-step {
+            position: relative;
+            padding-left: calc(var(--spacing-xl) + var(--spacing-md));
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .procedure-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: var(--spacing-xl);
+            height: var(--spacing-xl);
+            background: var(--accent-gold);
+            color: var(--ink);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .procedure-step h4 {
+            margin-top: 0;
+        }
+
+        /* Expandable/Collapsible Sections */
+        details {
+            margin: var(--spacing-md) 0;
+            background: var(--parchment-light);
+            border-radius: 6px;
+            border: 1px solid var(--parchment-dark);
+        }
+
+        summary {
+            font-family: var(--font-display);
+            font-weight: 600;
+            padding: var(--spacing-md);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        summary::before {
+            content: '▸';
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details .content-inner {
+            padding: 0 var(--spacing-md) var(--spacing-md);
+            border-top: 1px solid var(--parchment-dark);
+        }
+
+        /* Quick Reference Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .card {
+            background: var(--parchment-light);
+            border: 1px solid var(--parchment-dark);
+            border-radius: 6px;
+            padding: var(--spacing-md);
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--accent-copper);
+        }
+
+        .card-content {
+            font-size: 0.9rem;
+        }
+
+        /* System Tags */
+        .system-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            background: var(--ink);
+            color: var(--parchment);
+            margin-right: var(--spacing-xs);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-2xl) 0;
+            border-top: 2px solid var(--parchment-dark);
+            margin-top: var(--spacing-2xl);
+            color: var(--ink-faded);
+            font-size: 0.85rem;
+        }
+
+        .footer::before {
+            content: '✦ ✦ ✦';
+            display: block;
+            letter-spacing: 0.5em;
+            margin-bottom: var(--spacing-md);
+            color: var(--accent-gold);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main {
+                margin-left: 0;
+                padding: var(--spacing-lg);
+            }
+
+            .mobile-nav-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
+            z-index: 101;
+            width: 44px;
+            height: 44px;
+            background: var(--ink);
+            color: var(--parchment);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            .sidebar, .mobile-nav-toggle {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .placeholder {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-nav-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h1>The Western Horizon</h1>
+            <div class="subtitle">Campaign Framework</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-bar-label">Document Completion</div>
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-bar-text"><span id="progress-text">0</span> of <span id="progress-total">0</span> sections complete</div>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">Overview</div>
+            <a href="#introduction" class="nav-link" data-status="pending">Introduction<span class="status pending">—</span></a>
+            <a href="#philosophy" class="nav-link" data-status="pending">Core Philosophy<span class="status pending">—</span></a>
+            <a href="#systems-overview" class="nav-link" data-status="pending">Systems Overview<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">I. Charting the Horizon</div>
+            <a href="#session-zero" class="nav-link" data-status="pending">Session Zero<span class="status pending">—</span></a>
+            <a href="#session-zero-palette" class="nav-link sub" data-status="pending">The Palette<span class="status pending">—</span></a>
+            <a href="#session-zero-guild" class="nav-link sub" data-status="pending">Guild Charter<span class="status pending">—</span></a>
+            <a href="#session-zero-era" class="nav-link sub" data-status="pending">Starting Era<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">II. Settlements on the Horizon</div>
+            <a href="#settlement-creation" class="nav-link" data-status="pending">Settlement Creation<span class="status pending">—</span></a>
+            <a href="#settlement-founding" class="nav-link sub" data-status="pending">Founding History<span class="status pending">—</span></a>
+            <a href="#settlement-districts" class="nav-link sub" data-status="pending">Districts & Geography<span class="status pending">—</span></a>
+            <a href="#settlement-factions" class="nav-link sub" data-status="pending">Factions & Power<span class="status pending">—</span></a>
+            <a href="#settlement-buildings" class="nav-link sub" data-status="pending">Notable Buildings<span class="status pending">—</span></a>
+            <a href="#settlement-npcs" class="nav-link sub" data-status="pending">Key NPCs<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">III. Beyond the Horizon</div>
+            <a href="#wilderness-creation" class="nav-link" data-status="pending">Wilderness & Hexes<span class="status pending">—</span></a>
+            <a href="#wilderness-terrain" class="nav-link sub" data-status="pending">Terrain Generation<span class="status pending">—</span></a>
+            <a href="#wilderness-discoveries" class="nav-link sub" data-status="pending">Points of Interest<span class="status pending">—</span></a>
+            <a href="#wilderness-dangers" class="nav-link sub" data-status="pending">Dangers & Encounters<span class="status pending">—</span></a>
+            <a href="#wilderness-travel" class="nav-link sub" data-status="pending">Travel Procedures<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">IV. What Lies Beneath</div>
+            <a href="#dungeon-creation" class="nav-link" data-status="pending">Dungeon & Site Creation<span class="status pending">—</span></a>
+            <a href="#dungeon-rumors" class="nav-link sub" data-status="pending">Rumors & Discovery<span class="status pending">—</span></a>
+            <a href="#dungeon-mapping" class="nav-link sub" data-status="pending">Mapping Procedures<span class="status pending">—</span></a>
+            <a href="#dungeon-denizens" class="nav-link sub" data-status="pending">Threats & Denizens<span class="status pending">—</span></a>
+            <a href="#dungeon-treasures" class="nav-link sub" data-status="pending">Treasures & Rewards<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">V. The Guild at Work</div>
+            <a href="#quest-prep" class="nav-link" data-status="pending">Quest Preparation<span class="status pending">—</span></a>
+            <a href="#quest-intent" class="nav-link sub" data-status="pending">Player Intent<span class="status pending">—</span></a>
+            <a href="#quest-generation" class="nav-link sub" data-status="pending">Content Generation<span class="status pending">—</span></a>
+            <a href="#quest-hooks" class="nav-link sub" data-status="pending">Hooks & Situations<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">VI. At the Table</div>
+            <a href="#session-play" class="nav-link" data-status="pending">Running Sessions<span class="status pending">—</span></a>
+            <a href="#session-recording" class="nav-link sub" data-status="pending">Recording & Notes<span class="status pending">—</span></a>
+            <a href="#session-discoveries" class="nav-link sub" data-status="pending">Logging Discoveries<span class="status pending">—</span></a>
+            <a href="#session-aftermath" class="nav-link sub" data-status="pending">Post-Session Duties<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">VII. The Guild Archive</div>
+            <a href="#wiki" class="nav-link" data-status="pending">Wiki Structure<span class="status pending">—</span></a>
+            <a href="#wiki-templates" class="nav-link sub" data-status="pending">Entry Templates<span class="status pending">—</span></a>
+            <a href="#wiki-workflow" class="nav-link sub" data-status="pending">Update Workflow<span class="status pending">—</span></a>
+            <a href="#wiki-claude" class="nav-link sub" data-status="pending">Claude Integration<span class="status pending">—</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-section-title">Appendices</div>
+            <a href="#appendix-tables" class="nav-link" data-status="pending">Oracle Tables<span class="status pending">—</span></a>
+            <a href="#appendix-solo" class="nav-link" data-status="pending">Solo Procedures<span class="status pending">—</span></a>
+            <a href="#appendix-reference" class="nav-link" data-status="pending">Quick Reference<span class="status pending">—</span></a>
+            <a href="#appendix-sources" class="nav-link" data-status="pending">Source Systems<span class="status pending">—</span></a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="content">
+            <header class="hero">
+                <h1>The Western Horizon</h1>
+                <p class="tagline">A Framework for Collaborative West Marches Campaigns</p>
+                <div class="version">Version 0.1 — Draft</div>
+            </header>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 OVERVIEW SECTION
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <div class="placeholder">
+                    <div class="placeholder-icon">📜</div>
+                    <div class="placeholder-title">Introduction & Welcome</div>
+                    <div class="placeholder-text">
+                        What is The Western Horizon? Who is this for? How to use this document.
+                    </div>
+                </div>
+            </section>
+
+            <section id="philosophy">
+                <h2>Core Philosophy</h2>
+                
+                <div class="callout philosophy">
+                    <div class="callout-title">The Fundamental Principle</div>
+                    <p>Content is generated <em>reactively</em> when players declare intent, not pre-generated in advance. Once established, it "always existed"—common knowledge available to all guild members.</p>
+                </div>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">⚖️</div>
+                    <div class="placeholder-title">Philosophy Section</div>
+                    <div class="placeholder-text">
+                        Player-driven exploration. Collaborative authorship. Canon integration. The "always existed" principle.
+                    </div>
+                </div>
+            </section>
+
+            <section id="systems-overview">
+                <h2>Systems Overview</h2>
+                
+                <p>The Western Horizon draws from multiple collaborative worldbuilding games, each handling a different scale of content:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scale</th>
+                            <th>Primary Systems</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>History</strong></td>
+                            <td>
+                                <span class="system-tag">Microscope</span>
+                                <span class="system-tag">Chronicle</span>
+                            </td>
+                            <td>Eras, major events, defining moments</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Settlement</strong></td>
+                            <td>
+                                <span class="system-tag">Ex Novo</span>
+                                <span class="system-tag">Kingdom</span>
+                            </td>
+                            <td>Districts, factions, development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Buildings</strong></td>
+                            <td>
+                                <span class="system-tag">Beak, Feather, & Bone</span>
+                                <span class="system-tag">Street Magic</span>
+                            </td>
+                            <td>Locations, NPCs, relationships</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wilderness</strong></td>
+                            <td>
+                                <span class="system-tag">Perilous Wilds</span>
+                                <span class="system-tag">Hexmancer</span>
+                            </td>
+                            <td>Terrain, discoveries, dangers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dungeons</strong></td>
+                            <td>
+                                <span class="system-tag">Ex Umbra</span>
+                                <span class="system-tag">RISE</span>
+                            </td>
+                            <td>Layouts, threats, treasures</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🗺️</div>
+                    <div class="placeholder-title">System Integration Map</div>
+                    <div class="placeholder-text">
+                        Detailed breakdown of how each system feeds into the others. Handoff procedures. Scale definitions.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 PART I: SESSION ZERO
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="session-zero">
+                <h2>I. Charting the Horizon — Session Zero</h2>
+                
+                <p>Before adventures begin, the group gathers to establish the boundaries, tone, and starting conditions of your campaign world. This isn't about filling in every detail—it's about building the foundation that makes reactive generation meaningful.</p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🧭</div>
+                    <div class="placeholder-title">Session Zero Overview</div>
+                    <div class="placeholder-text">
+                        Purpose, expected duration, what players should bring, outcomes by end of session.
+                    </div>
+                    <div class="placeholder-source">Sources: Microscope (Palette, Big Picture), Kingdom, Ex Novo (abbreviated)</div>
+                </div>
+            </section>
+
+            <section id="session-zero-palette">
+                <h3>The Palette</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🎨</div>
+                    <div class="placeholder-title">Palette Procedure</div>
+                    <div class="placeholder-text">
+                        Yes/No lists. Tone boundaries. Content expectations. Examples from Microscope.
+                    </div>
+                    <div class="placeholder-source">Source: Microscope</div>
+                </div>
+            </section>
+
+            <section id="session-zero-guild">
+                <h3>The Guild Charter</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🏛️</div>
+                    <div class="placeholder-title">Guild Charter Procedure</div>
+                    <div class="placeholder-text">
+                        Establishing the Adventurers' Guild. Its role, reputation, resources, limitations. The bulletin board.
+                    </div>
+                </div>
+            </section>
+
+            <section id="session-zero-era">
+                <h3>The Starting Era</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">⏳</div>
+                    <div class="placeholder-title">Starting Era Procedure</div>
+                    <div class="placeholder-text">
+                        When does the campaign begin? What preceded it? The Big Picture from Microscope. Abbreviated Ex Novo founding.
+                    </div>
+                    <div class="placeholder-source">Sources: Microscope (Big Picture), Ex Novo (Founding)</div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 PART II: SETTLEMENTS
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="settlement-creation">
+                <h2>II. Settlements on the Horizon</h2>
+                
+                <p>Settlements are generated when players reach new tiers or when the fiction demands a new population center. The procedures scale based on the settlement's importance to play.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Level Range</th>
+                            <th>Settlement Type</th>
+                            <th>Guild Presence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1–4</td>
+                            <td>Hamlet / Village</td>
+                            <td>Bulletin board, local contact</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>5–10</td>
+                            <td>Town</td>
+                            <td>Small branch office</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11–16</td>
+                            <td>City</td>
+                            <td>Full guild hall</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>17+</td>
+                            <td>Capital / Metropolis</td>
+                            <td>Regional headquarters</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🏘️</div>
+                    <div class="placeholder-title">Settlement Creation Overview</div>
+                    <div class="placeholder-text">
+                        When to run a settlement session. Who participates. Expected duration. Output checklist.
+                    </div>
+                    <div class="placeholder-source">Sources: Ex Novo, Beak Feather & Bone, Street Magic, Microscope Chronicle</div>
+                </div>
+            </section>
+
+            <section id="settlement-founding">
+                <h3>Founding History</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">📖</div>
+                    <div class="placeholder-title">Founding Procedure</div>
+                    <div class="placeholder-text">
+                        Why was this place founded? Initial resources. The founding event tables from Ex Novo.
+                    </div>
+                    <div class="placeholder-source">Source: Ex Novo (Founding Phase)</div>
+                </div>
+            </section>
+
+            <section id="settlement-districts">
+                <h3>Districts & Geography</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🗺️</div>
+                    <div class="placeholder-title">Districts Procedure</div>
+                    <div class="placeholder-text">
+                        Mapping the settlement. District types. Geography features. Growth patterns.
+                    </div>
+                    <div class="placeholder-source">Source: Ex Novo (Development Phase)</div>
+                </div>
+            </section>
+
+            <section id="settlement-factions">
+                <h3>Factions & Power</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">⚔️</div>
+                    <div class="placeholder-title">Factions Procedure</div>
+                    <div class="placeholder-text">
+                        Who holds power? Faction relationships. Power tracking. The 11 community roles from BF&B.
+                    </div>
+                    <div class="placeholder-source">Sources: Ex Novo (Factions), Beak Feather & Bone (Roles), Kingdom (Crossroads)</div>
+                </div>
+            </section>
+
+            <section id="settlement-buildings">
+                <h3>Notable Buildings</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🏛️</div>
+                    <div class="placeholder-title">Buildings Procedure</div>
+                    <div class="placeholder-text">
+                        The Beak, Feather, & Bone procedure. Card meanings. Claiming buildings. Reputation, appearance, interior.
+                    </div>
+                    <div class="placeholder-source">Source: Beak, Feather, & Bone</div>
+                </div>
+            </section>
+
+            <section id="settlement-npcs">
+                <h3>Key NPCs</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">👤</div>
+                    <div class="placeholder-title">NPC Procedure</div>
+                    <div class="placeholder-text">
+                        Creating memorable characters. Neighborhoods, landmarks, residents from Street Magic. Anchor characters from Chronicle.
+                    </div>
+                    <div class="placeholder-source">Sources: Street Magic, Microscope Chronicle (Anchors)</div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 PART III: WILDERNESS
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="wilderness-creation">
+                <h2>III. Beyond the Horizon — Wilderness</h2>
+                
+                <p>The wilderness is the true frontier of The Western Horizon. Unlike settlements, wilderness content is often generated during prep immediately before sessions—when a player declares "I want to explore the swamp to the northwest."</p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🌲</div>
+                    <div class="placeholder-title">Wilderness Overview</div>
+                    <div class="placeholder-text">
+                        Hex scale. Known vs. unknown. The exploration frontier. When to generate.
+                    </div>
+                    <div class="placeholder-source">Sources: Perilous Wilds, Hexmancer, The Alexandrian</div>
+                </div>
+            </section>
+
+            <section id="wilderness-terrain">
+                <h3>Terrain Generation</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🏔️</div>
+                    <div class="placeholder-title">Terrain Procedure</div>
+                    <div class="placeholder-text">
+                        Terrain types. Climate and features. The Hexmancer procedure. Ex Novo surrounding terrain.
+                    </div>
+                    <div class="placeholder-source">Sources: Hexmancer, Ex Novo (Terrain), Perilous Wilds</div>
+                </div>
+            </section>
+
+            <section id="wilderness-discoveries">
+                <h3>Points of Interest</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">✨</div>
+                    <div class="placeholder-title">Discoveries Procedure</div>
+                    <div class="placeholder-text">
+                        Discovery tables from Perilous Wilds. Types of discoveries. Seeding hooks.
+                    </div>
+                    <div class="placeholder-source">Source: Perilous Wilds (Discoveries)</div>
+                </div>
+            </section>
+
+            <section id="wilderness-dangers">
+                <h3>Dangers & Encounters</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">⚠️</div>
+                    <div class="placeholder-title">Dangers Procedure</div>
+                    <div class="placeholder-text">
+                        Danger tables. Monster creation. Environmental hazards. Encounter design.
+                    </div>
+                    <div class="placeholder-source">Source: Perilous Wilds (Dangers)</div>
+                </div>
+            </section>
+
+            <section id="wilderness-travel">
+                <h3>Travel Procedures</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🥾</div>
+                    <div class="placeholder-title">Travel Procedure</div>
+                    <div class="placeholder-text">
+                        Movement rates. Navigation. Getting lost. Resource management. Hexcrawl moves.
+                    </div>
+                    <div class="placeholder-source">Source: Perilous Wilds (Moves), The Alexandrian</div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 PART IV: DUNGEONS
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="dungeon-creation">
+                <h2>IV. What Lies Beneath the Horizon</h2>
+                
+                <p>Dungeons and adventure sites are the crucibles of play—where treasure waits, where danger lurks, where legends are made. These procedures help you build memorable locations from fragments of rumor and hearsay.</p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🏚️</div>
+                    <div class="placeholder-title">Dungeon Creation Overview</div>
+                    <div class="placeholder-text">
+                        When to create dungeons. Types of sites. Scale and complexity. The rumor-first approach.
+                    </div>
+                    <div class="placeholder-source">Sources: Ex Umbra, RISE, Perilous Wilds</div>
+                </div>
+            </section>
+
+            <section id="dungeon-rumors">
+                <h3>Rumors & Discovery</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">👂</div>
+                    <div class="placeholder-title">Rumors Procedure</div>
+                    <div class="placeholder-text">
+                        The Ex Umbra campfire approach. Unreliable narrators. Building from fragments. The discovery phase.
+                    </div>
+                    <div class="placeholder-source">Source: Ex Umbra</div>
+                </div>
+            </section>
+
+            <section id="dungeon-mapping">
+                <h3>Mapping Procedures</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">📐</div>
+                    <div class="placeholder-title">Mapping Procedure</div>
+                    <div class="placeholder-text">
+                        Collaborative mapping. The heart turn and tremor turn. Card-driven room generation. RISE solo mapping.
+                    </div>
+                    <div class="placeholder-source">Sources: Ex Umbra, RISE</div>
+                </div>
+            </section>
+
+            <section id="dungeon-denizens">
+                <h3>Threats & Denizens</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">👹</div>
+                    <div class="placeholder-title">Denizens Procedure</div>
+                    <div class="placeholder-text">
+                        Monster creation tables. Threat tokens. Ecology and factions. The dungeon as living place.
+                    </div>
+                    <div class="placeholder-source">Sources: Ex Umbra (Threats), Perilous Wilds (Monster Creation)</div>
+                </div>
+            </section>
+
+            <section id="dungeon-treasures">
+                <h3>Treasures & Rewards</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">💎</div>
+                    <div class="placeholder-title">Treasures Procedure</div>
+                    <div class="placeholder-text">
+                        Reward tokens. Treasure types. Meaningful loot. Connecting treasure to history.
+                    </div>
+                    <div class="placeholder-source">Sources: Ex Umbra (Rewards), Perilous Wilds</div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 PART V: QUEST PREP
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="quest-prep">
+                <h2>V. The Guild at Work — Quest Preparation</h2>
+                
+                <p>This is where reactive generation becomes practical. A player posts intent; a DM (possibly with the player) generates what's needed; the results become canon; the session runs.</p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">📋</div>
+                    <div class="placeholder-title">Quest Prep Overview</div>
+                    <div class="placeholder-text">
+                        The complete workflow from player intent to session-ready content.
+                    </div>
+                </div>
+            </section>
+
+            <section id="quest-intent">
+                <h3>Reading Player Intent</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">💬</div>
+                    <div class="placeholder-title">Intent Procedure</div>
+                    <div class="placeholder-text">
+                        What does the player actually want? Types of intent. The Discord post. Forming a party.
+                    </div>
+                </div>
+            </section>
+
+            <section id="quest-generation">
+                <h3>Content Generation</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">⚙️</div>
+                    <div class="placeholder-title">Generation Procedure</div>
+                    <div class="placeholder-text">
+                        Check existing canon. Identify gaps. Select appropriate system. Generate content. Update wiki.
+                    </div>
+                </div>
+            </section>
+
+            <section id="quest-hooks">
+                <h3>Hooks & Situations</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🪝</div>
+                    <div class="placeholder-title">Hooks Procedure</div>
+                    <div class="placeholder-text">
+                        Turning generated content into playable situations. The Lazy DM approach. Complications and stakes.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════════════
+                 PART VI: AT THE TABLE
+                 ═══════════════════════════════════════════════════════════════ -->
+
+            <section id="session-play">
+                <h2>VI. At the Table — Running Sessions</h2>
+                
+                <p>The adventure itself follows standard West Marches conventions, but The Western Horizon adds specific practices for recording discoveries and maintaining the living world.</p>
+
+                <div class="placeholder">
+                    <div class="placeholder-icon">🎲</div>
+                    <div class="placeholder-title">Session Play Overview</div>
+                    <div class="placeholder-text">
+                        West Marches conventions. Session structure. Player expectations.
+                    </div>
+                </div>
+            </section>
+
+            <section id="session-recording">
+                <h3>Recording & Notes</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">🎙️</div>
+                    <div class="placeholder-title">Recording Procedure</div>
+                    <div class="placeholder-text">
+                        Audio recording setup. Craig bot for Discord. In-person options. Staying present during play.
+                    </div>
+                </div>
+            </section>
+
+            <section id="session-discoveries">
+                <h3>Logging Discoveries</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">📝</div>
+                    <div class="placeholder-title">Discoveries Procedure</div>
+                    <div class="placeholder-text">
+                        What gets logged. Quick capture during play. Discovery types. Canon implications.
+                    </div>
+                </div>
+            </section>
+
+            <section id="session-aftermath">
+                <h3>Post-Session Duties</h3>
+                <div class="placeholder">
+                    <div class="placeholder-icon">✅</div>
+                    
