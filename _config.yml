@@ -1,0 +1,45 @@
+# The Western Horizon — Jekyll Configuration
+# GitHub Pages compatible
+
+title: The Western Horizon
+description: A Framework for Collaborative West Marches Campaigns
+version: "0.1"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Theme (optional - we're using custom CSS)
+# theme: null
+
+# Exclude from build
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include dotfiles if needed
+include:
+  - _pages
+
+# Permalink structure
+permalink: pretty
+
+# Collections (if you want to add more content types later)
+# collections:
+#   sessions:
+#     output: true
+#   locations:
+#     output: true
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
