@@ -6,11 +6,11 @@
 
 ## What Is This?
 
-The Western Horizon is a unified framework for running West Marches campaigns using collaborative worldbuilding games. Instead of pre-generating content, the world is built **reactively** when players declare intent. Once established, content "always existed" as common knowledge.
+The Western Horizon is a unified framework for running West Marches campaigns using collaborative worldbuilding games. Instead of pre-generating content, the world is built **responsively** when players declare intent. Once established, content "always existed" as common knowledge.
 
 ## Core Philosophy
 
-1. **Reactive Generation:** Content is created when needed, not before
+1. **Responsive Generation:** Content is created when needed, not before
 2. **Collaborative Authorship:** Players and DMs build the world together
 3. **Canon Integration:** All generated content becomes shared knowledge
 4. **System Synthesis:** Multiple worldbuilding games combined by scale
@@ -59,7 +59,7 @@ The Western Horizon is a unified framework for running West Marches campaigns us
 
 1. **Tier System:** Settlements scale with character level (1-4: Village, 5-10: Town, 11-16: City, 17+: Capital)
 
-2. **Generation Timing:** Not reactive *during* play—reactive to player *intent* but done in prep before sessions
+2. **Generation Timing:** Not responsive *during* play—responsive to player *intent* but done in prep before sessions
 
 3. **Workflow:**
    - Player posts intent in Discord

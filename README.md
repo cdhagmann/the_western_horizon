@@ -4,7 +4,7 @@
 
 ---
 
-**The Western Horizon** is a unified campaign framework that combines collaborative worldbuilding games with traditional West Marches play. Instead of pre-generating a world before play begins, content is created *reactively*—when a player says "I want to explore the swamp to the northwest," that's when the swamp gets built.
+**The Western Horizon** is a unified campaign framework that combines collaborative worldbuilding games with traditional West Marches play. Instead of pre-generating a world before play begins, content is created *responsively*—when a player says "I want to explore the swamp to the northwest," that's when the swamp gets built.
 
 Once established, all generated content "always existed" as common knowledge available to every guild member.
 

@@ -44,14 +44,64 @@
         </tbody>
     </table>
 
-    <div class="placeholder">
-        <div class="placeholder-icon">🏘️</div>
-        <div class="placeholder-title">Settlement Creation Overview</div>
-        <div class="placeholder-text">
-            When to run a settlement session. Who participates. Expected duration. Output checklist.
-        </div>
-        <div class="placeholder-source">Sources: Ex Novo, Beak Feather & Bone, Street Magic, Microscope Chronicle</div>
+    <h3>Settlement Creation Modes</h3>
+    
+    <p>Western Horizon supports three settlement creation modes, scalable by time and detail needs:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mode</th>
+                <th>Duration</th>
+                <th>When to Use</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Quick</strong></td>
+                <td>15-30 min</td>
+                <td>Party discovers settlement mid-session</td>
+                <td>4-6 buildings, 1 faction conflict, basic services</td>
+            </tr>
+            <tr>
+                <td><strong>Medium</strong></td>
+                <td>1-2 hours</td>
+                <td>Notable town, regional hub, between-session prep</td>
+                <td>12-20 buildings, 3-4 factions, multiple NPCs, political structure</td>
+            </tr>
+            <tr>
+                <td><strong>Full</strong></td>
+                <td>2-4 hours</td>
+                <td>Session zero hometown, campaign hub, major city</td>
+                <td>30+ buildings, 5+ factions, complex politics, deep history</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout philosophy">
+        <div class="callout-title">Partial Definition is Intentional</div>
+        <p>Even "full" settlements leave 50-70% undefined. Blank spaces aren't failures—they're <strong>breathing room</strong> for future GMs and sessions. The goal is creating <strong>framework</strong>, not comprehensive simulation.</p>
     </div>
+
+    <h4>Who Participates</h4>
+    <ul>
+        <li><strong>Quick Mode:</strong> DM alone or with 1-2 players</li>
+        <li><strong>Medium Mode:</strong> DM + interested players (2-4 people)</li>
+        <li><strong>Full Mode:</strong> Whole table as session zero activity</li>
+    </ul>
+
+    <h4>Output Checklist</h4>
+    <p>Every settlement generation should produce:</p>
+    <ul>
+        <li>✓ Settlement name and tier (hamlet/village/town/city)</li>
+        <li>✓ 2-5 active factions with clear interests</li>
+        <li>✓ Ruling faction (who holds Seat of Power)</li>
+        <li>✓ Notable buildings with three-layer descriptions</li>
+        <li>✓ 2-5 named NPCs with clear motivations</li>
+        <li>✓ At least one built-in faction conflict</li>
+        <li>✓ Optional: Settlement-specific threat (Claw Atlas)</li>
+    </ul>
 </section>
 
 <section id="settlement-founding">
@@ -80,37 +130,553 @@
 
 <section id="settlement-factions">
     <h3>Factions & Power</h3>
-    <div class="placeholder">
-        <div class="placeholder-icon">⚔️</div>
-        <div class="placeholder-title">Factions Procedure</div>
-        <div class="placeholder-text">
-            Who holds power? Faction relationships. Power tracking. The 11 community roles from BF&B.
-        </div>
-        <div class="placeholder-source">Sources: Ex Novo (Factions), Beak Feather & Bone (Roles), Kingdom (Crossroads)</div>
+    
+    <p>Factions aren't demographic categories—they're <strong>interpretive lenses</strong> for defining power structures. The same faction means different things in different settlements: "Mages" in a coastal town might be weather-witches, while in a mountain fortress they're war-wizards.</p>
+
+    <div class="callout philosophy">
+        <div class="callout-title">Factions as Lenses, Not Demographics</div>
+        <p>Don't think "20% of the population are miners." Think "Mining interests shape this building's purpose." Most people don't belong to any faction—factions represent <strong>organized power</strong>, not population.</p>
+    </div>
+
+    <h4>The Ten Community Factions</h4>
+    <p>When creating a settlement, choose 2-5 factions based on terrain, plot needs, and what makes this place distinct:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Faction</th>
+                <th>Focus</th>
+                <th>Typical Terrains</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Mages</strong></td>
+                <td>Magic, knowledge, experimentation</td>
+                <td>Any (often mountain/urban)</td>
+            </tr>
+            <tr>
+                <td><strong>Miners</strong></td>
+                <td>Resources, underground, extraction</td>
+                <td>Hills, Mountains</td>
+            </tr>
+            <tr>
+                <td><strong>Farmers</strong></td>
+                <td>Agriculture, food production, land</td>
+                <td>Plains, Woods (edges)</td>
+            </tr>
+            <tr>
+                <td><strong>Ranchers</strong></td>
+                <td>Livestock, trade, animal husbandry</td>
+                <td>Plains, Hills</td>
+            </tr>
+            <tr>
+                <td><strong>Thieves</strong></td>
+                <td>Crime, shadows, redistribution</td>
+                <td>Any (urban)</td>
+            </tr>
+            <tr>
+                <td><strong>Soldiers</strong></td>
+                <td>Defense, order, military</td>
+                <td>Any (especially borders)</td>
+            </tr>
+            <tr>
+                <td><strong>Merchants</strong></td>
+                <td>Trade, wealth, connections</td>
+                <td>Any (crossroads, ports)</td>
+            </tr>
+            <tr>
+                <td><strong>Elders</strong></td>
+                <td>Tradition, wisdom, governance</td>
+                <td>Any (established settlements)</td>
+            </tr>
+            <tr>
+                <td><strong>Clerics</strong></td>
+                <td>Faith, healing, spirituality</td>
+                <td>Any</td>
+            </tr>
+            <tr>
+                <td><strong>Strangers</strong></td>
+                <td>Outsiders, mystery, change</td>
+                <td>Any (especially remote)</td>
+            </tr>
+            <tr>
+                <td><strong>Hunters</strong></td>
+                <td>Survival, protection, wilderness</td>
+                <td>Woods, Hills, Mountains</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Quick Faction Selection by Terrain</h4>
+    <ul>
+        <li><strong>Plains Settlement:</strong> Farmers, Ranchers, Merchants, Elders</li>
+        <li><strong>Hills Settlement:</strong> Miners, Soldiers, Ranchers, Hunters</li>
+        <li><strong>Woods Settlement:</strong> Hunters, Farmers, Strangers, Thieves</li>
+        <li><strong>Mountain Settlement:</strong> Miners, Soldiers, Mages, Clerics</li>
+        <li><strong>Crossroads/Trade:</strong> Merchants, Soldiers, Thieves, Ranchers</li>
+    </ul>
+
+    <h4>Faction Conflicts</h4>
+    <p>Some faction pairs naturally generate tension. Use these for built-in conflicts:</p>
+    <ul>
+        <li><strong>Mages vs. Clerics:</strong> Reason vs. faith, innovation vs. tradition</li>
+        <li><strong>Miners vs. Farmers:</strong> Extraction vs. cultivation, short-term vs. long-term</li>
+        <li><strong>Soldiers vs. Thieves:</strong> Order vs. chaos, law vs. liberty</li>
+        <li><strong>Merchants vs. Elders:</strong> Progress vs. tradition, profit vs. community</li>
+        <li><strong>Strangers vs. Anyone:</strong> Outsiders vs. established order</li>
+        <li><strong>Hunters vs. Expansion:</strong> Wilderness protection vs. settlement growth</li>
+    </ul>
+
+    <h4>The Seat of Power</h4>
+    <p>One faction controls the settlement's central authority. This is determined through the building claiming process (see Notable Buildings below). The ruling faction:</p>
+    <ul>
+        <li>Controls the most significant landmark (Seat of Power)</li>
+        <li>Sets the settlement's priorities and policies</li>
+        <li>Defines what's legal/illegal, valued/scorned</li>
+        <li>Provides default authority figures</li>
+    </ul>
+
+    <div class="callout tip">
+        <div class="callout-title">Living Factions</div>
+        <p>Track faction influence over time. If players consistently support one faction, they can shift the Seat of Power. Settlements evolve with the campaign.</p>
     </div>
 </section>
 
 <section id="settlement-buildings">
     <h3>Notable Buildings</h3>
-    <div class="placeholder">
-        <div class="placeholder-icon">🏛️</div>
-        <div class="placeholder-title">Buildings Procedure</div>
-        <div class="placeholder-text">
-            The Beak, Feather, & Bone procedure. Card meanings. Claiming buildings. Reputation, appearance, interior.
-        </div>
-        <div class="placeholder-source">Source: Beak, Feather, & Bone</div>
+    
+    <p>Buildings are defined through <strong>faction claiming</strong>—each active faction describes buildings from their perspective, creating a web of purposes, appearances, and hidden truths. This can be done collaboratively (session zero) or by the DM (between sessions).</p>
+
+    <div class="callout philosophy">
+        <div class="callout-title">The Three-Layer Description</div>
+        <p>Every building gets three sentences that create depth without overwhelming detail:</p>
+        <ul>
+            <li><strong>BEAK (Reputation):</strong> What do locals say? The rumor, the common knowledge</li>
+            <li><strong>FEATHER (Appearance):</strong> What does it look like outside? Visual hooks for players</li>
+            <li><strong>BONE (Reality):</strong> What's it really like inside? The truth, often contradicting the rumor</li>
+        </ul>
+        <p>This technique works for ANY location in Western Horizon—not just settlements.</p>
     </div>
+
+    <div class="callout">
+        <div class="callout-title">How Many Landmarks?</div>
+        <p><strong>Session Zero:</strong> 2-3 per district (total 5-10 for whole settlement)<br>
+        <strong>During Play:</strong> Add more reactively as players explore</p>
+    </div>
+
+    <h4>The Landmark Procedure</h4>
+    <p>Creating a landmark takes <strong>5-10 minutes</strong> of collaborative discussion. Each landmark needs three elements:</p>
+    
+    <div class="procedure">
+        <div class="procedure-step">
+            <h4>Title</h4>
+            <p>What do locals call this place? The common name used in everyday conversation.</p>
+            <p><em>Examples: The Gilt Rose Inn, Temple of Smoke and Mirrors, Margrave's Counting House, The Stormwatch Tower</em></p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>Address</h4>
+            <p>Where is it within the district? This can be literal or poetic.</p>
+            <ul>
+                <li><strong>Literal:</strong> "17 Saltmarket Street, above the cobbler's"</li>
+                <li><strong>Relative:</strong> "Three blocks from the fountain, near the old wall"</li>
+                <li><strong>Poetic:</strong> "At the crossroads where the pilgrim trail ends"</li>
+                <li><strong>Vertical:</strong> "Second story of the harbormaster's building" or "In the undercity, below the aqueduct"</li>
+            </ul>
+            <p>The address helps establish <strong>spatial relationships</strong> between landmarks.</p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>True Name</h4>
+            <p>This is the <strong>sensory essence</strong> that makes the landmark unforgettable. Answer: <em>"What do you see, smell, hear, feel, or taste when you walk in?"</em></p>
+            
+            <div class="callout tip">
+                <div class="callout-title">Creating True Names</div>
+                <p>Close your eyes. Imagine walking into this place. What's the <strong>first thing you notice?</strong></p>
+                <ul>
+                    <li><strong>The Gilt Rose Inn:</strong> "sawdust floors smell of pine, firelight dances on copper mugs, laughter from the kitchen"</li>
+                    <li><strong>Temple of Smoke and Mirrors:</strong> "incense thick enough to taste, reflective obsidian walls, whispered prayers echo"</li>
+                    <li><strong>The Counting House:</strong> "scratch of quills on parchment, smell of ink and dust, golden abacus clicks rhythmically"</li>
+                </ul>
+                <p>True names should be <strong>specific and evocative</strong>, not generic. They create immediate mental images and help the DM recall details during play.</p>
+            </div>
+        </div>
+    </div>
+
+    <h4>Quick Landmark Creation</h4>
+    <p>When you need a landmark <strong>right now</strong> (during session or quick prep):</p>
+    <ol>
+        <li><strong>Title</strong> (30 seconds): First thing that comes to mind</li>
+        <li><strong>Address</strong> (1 minute): How do you get there from somewhere players know?</li>
+        <li><strong>True Name</strong> (2-3 minutes): Discuss sensory details until something clicks</li>
+    </ol>
+
+    <h4>Building Purposes & Temporal Frames</h4>
+    <p>Buildings serve different roles in the community across four temporal frames. When defining buildings, consider their relationship to time:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Frame</th>
+                <th>Purpose</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>♥ Social</strong></td>
+                <td>Present community function</td>
+                <td>Taverns, meeting halls, temples (active), parks, bathhouses, theaters</td>
+            </tr>
+            <tr>
+                <td><strong>♦ Financial</strong></td>
+                <td>Present economic role</td>
+                <td>Markets, workshops, banks, warehouses, trading posts, merchant stalls</td>
+            </tr>
+            <tr>
+                <td><strong>♣ Future</strong></td>
+                <td>Preparation, aspiration</td>
+                <td>Construction sites, academies, arsenals (building), research facilities, observatories</td>
+            </tr>
+            <tr>
+                <td><strong>♠ Past</strong></td>
+                <td>Historical, abandoned</td>
+                <td>Ruins, sealed temples, old fortifications, forgotten monuments, empty manors</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout tip">
+        <div class="callout-title">Temporal Balance</div>
+        <p>Settlements feel lived-in when they have buildings across all four frames:</p>
+        <ul>
+            <li><strong>All Social/Financial, no Future/Past:</strong> Feels static, no sense of change</li>
+            <li><strong>Heavy Past:</strong> Settlement in decline, nostalgic tone</li>
+            <li><strong>Heavy Future:</strong> Growth/expansion focus, ambitious tone</li>
+            <li><strong>Balanced:</strong> Settlement with history, present life, and aspirations</li>
+        </ul>
+        <p>Use Past (♠) buildings as instant dungeon sites or mystery hooks.</p>
+    </div>
+
+    <h4>Generating Rival NPCs</h4>
+    <p>Some buildings automatically generate named NPCs through <strong>faction rivalry</strong>. When a building serves an important purpose (major landmark, Seat of Power candidate), create a rival from an opposing faction:</p>
+
+    <div class="procedure">
+        <div class="procedure-step">
+            <h4>Identify the Opposition</h4>
+            <p>Which faction would oppose this building's purpose? Use the <a href="#settlement-factions">Faction Conflicts</a> list above for natural pairings.</p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>Create the Rival (Three Sentences)</h4>
+            <ul>
+                <li><strong>BEAK:</strong> The rival's reputation in the community</li>
+                <li><strong>FEATHER:</strong> The rival's appearance and mannerisms</li>
+                <li><strong>BONE:</strong> The rival's true motivation (why they oppose this building)</li>
+            </ul>
+        </div>
+    </div>
+
+    <p><strong>Example:</strong> The Mages control a research laboratory. The Clerics oppose it.</p>
+    <ul>
+        <li><strong>BEAK:</strong> "Brother Aldus is known throughout town as a voice of moral clarity, warning against dangerous experiments."</li>
+        <li><strong>FEATHER:</strong> "A stern, elderly cleric with ink-stained fingers from years of scholarly debate, always carrying a leather-bound tome."</li>
+        <li><strong>BONE:</strong> "Once a mage himself, Aldus saw a ritual go wrong and kill his colleagues. He switched to the cloth to prevent others from making the same mistakes."</li>
+    </ul>
+
+    <div class="callout">
+        <div class="callout-title">Rivals Are Quest Fuel</div>
+        <p>Each rival provides:</p>
+        <ul>
+            <li>Named NPC with clear position</li>
+            <li>Faction quest hook ("Help X against Y" or vice versa)</li>
+            <li>Information source (rivals know secrets about each other)</li>
+            <li>Investigation angle ("What's X really after?")</li>
+        </ul>
+        <p><strong>Don't default to combat.</strong> Rivals create <em>political</em> opposition, not necessarily violent conflict.</p>
+    </div>
+
+    <h4>Integration with Other Systems</h4>
+    
+    <details>
+        <summary><strong>From Hexmancer Features</strong></summary>
+        <div class="content-inner">
+            <p>When Hexmancer generates a temple, wizard's tower, or castle:</p>
+            <ol>
+                <li>Use the feature type as inspiration for the <strong>Title</strong></li>
+                <li>The hex terrain informs the <strong>Address</strong> ("Deep in the forest," "At the mountain pass")</li>
+                <li>Create a <strong>True Name</strong> collaboratively</li>
+            </ol>
+            <p><strong>Example:</strong> Hexmancer generates "Temple in woods hex" → The Thorngate Chapel, at the end of the pilgrim trail half-buried in brambles, stained glass filters green light through fallen leaves.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary><strong>With Beak, Feather, & Bone</strong></summary>
+        <div class="content-inner">
+            <p>Use <strong>both systems together</strong>:</p>
+            <ul>
+                <li><strong>BF&B:</strong> Establishes faction roles and community structure</li>
+                <li><strong>Street Magic:</strong> Creates the specific locations where those factions operate</li>
+            </ul>
+            <p><strong>Example:</strong> BF&B creates "The Merchant Prince" (Power role) → Street Magic creates their headquarters: The Golden Scales Trading House, three-story building overlooking the harbor, smell of exotic spices and sound of ledgers snapping shut.</p>
+        </div>
+    </details>
 </section>
 
 <section id="settlement-npcs">
     <h3>Key NPCs</h3>
-    <div class="placeholder">
-        <div class="placeholder-icon">👤</div>
-        <div class="placeholder-title">NPC Procedure</div>
-        <div class="placeholder-text">
-            Creating memorable characters. Neighborhoods, landmarks, residents from Street Magic. Anchor characters from Chronicle.
-        </div>
-        <div class="placeholder-source">Sources: Street Magic, Microscope Chronicle (Anchors)</div>
+    
+    <p>Street Magic creates NPCs as <strong>Residents</strong>—characters associated with specific landmarks. This ties every important NPC to a location, making them easier to remember and giving players clear places to find them.</p>
+
+    <div class="callout philosophy">
+        <div class="callout-title">When to Create Residents</div>
+        <p><strong>Session Zero:</strong> 3-5 key NPCs (guild contacts, faction leaders, quest-givers)<br>
+        <strong>During Play:</strong> When players ask "Who runs this place?" or you need a memorable NPC</p>
     </div>
+
+    <h4>The Resident Procedure</h4>
+    <p>Creating a resident takes <strong>5-10 minutes</strong> through collaborative vignettes. Each resident needs:</p>
+    
+    <div class="procedure">
+        <div class="procedure-step">
+            <h4>Title & Pronouns</h4>
+            <p>What do people call them? Their common name and how they're referred to.</p>
+            <p><em>Examples: The Lamplighter (she/her), Brother Moss (he/him), The Keeper (they/them), Sena Three-Coins (she/her)</em></p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>Affiliated Landmark</h4>
+            <p>Every resident is tied to a specific landmark. Where do they work, live, or spend most of their time?</p>
+            <p>This creates <strong>findability</strong>—players know where to go to interact with this NPC.</p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>True Name (via Collaborative Vignette)</h4>
+            <p>The resident's true name is discovered through a <strong>short scene</strong> that shows them in their element.</p>
+            
+            <div class="callout tip">
+                <div class="callout-title">Running a Collaborative Vignette</div>
+                <ol>
+                    <li><strong>DM starts:</strong> "Let's see [Name] in their element. Where are they and what are they doing?"</li>
+                    <li><strong>Players contribute:</strong> 
+                        <ul>
+                            <li>"I see them..." (appearance, gesture, expression)</li>
+                            <li>"I hear..." (voice, ambient sounds, what they say)</li>
+                            <li>"They're holding..." (objects, tools, possessions)</li>
+                            <li>"I notice..." (habits, quirks, details)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Build together:</strong> Each contribution adds to the picture</li>
+                    <li><strong>Stop when you have it:</strong> When you can <em>see</em> this person clearly, extract the true name</li>
+                </ol>
+                
+                <p><strong>Example Vignette:</strong></p>
+                <p><em>DM: "Let's see The Lamplighter. Where is she?"<br>
+                Player 1: "She's on the corner of Saltmarket at dusk, lighting the street lamps one by one."<br>
+                Player 2: "I see her hands are always smudged with lamp oil, and she hums old mining songs while she works."<br>
+                DM: "She notices us watching and gives a gap-toothed smile, then moves to the next lamp without breaking her rhythm."<br>
+                Player 3: "There's something hypnotic about the way she moves—like she's performed this ritual a thousand times."</em></p>
+                
+                <p><strong>True Name:</strong> "oil-smudged hands, hums mining songs, gap-toothed smile, moves like ritual"</p>
+            </div>
+        </div>
+    </div>
+
+    <h4>Speed Variant: Dictated Vignettes</h4>
+    <p>If you need NPCs quickly, use <strong>dictated vignettes</strong> instead:</p>
+    <ul>
+        <li>The DM (or player creating the resident) narrates the scene alone</li>
+        <li>Takes 2-3 minutes instead of 5-10</li>
+        <li>Still provides the same character glimpse</li>
+        <li>Good for minor NPCs or when time is tight</li>
+    </ul>
+
+    <h4>Quick NPC Creation</h4>
+    <p>When you need an NPC <strong>immediately</strong> (mid-session):</p>
+    <ol>
+        <li><strong>Title & Pronouns</strong> (30 seconds)</li>
+        <li><strong>Skip the vignette</strong>—just pick one defining trait</li>
+        <li><strong>Minimal True Name</strong> (1 minute): One sensory detail + one quirk</li>
+        <li><strong>Note landmark</strong>: Where do they work/live?</li>
+    </ol>
+    <p><em>Example: Jorn the Smith (he/him), always sweating, never finishes sentences, works at the Forge Quarter</em></p>
+
+    <h4>Integration with Other Systems</h4>
+    
+    <details>
+        <summary><strong>With Beak, Feather, & Bone Roles</strong></summary>
+        <div class="content-inner">
+            <p>BF&B establishes <strong>11 community roles</strong> (Power, Protection, Prosperity, etc.). Use Street Magic to create the <strong>specific person</strong> filling that role:</p>
+            <ul>
+                <li><strong>BF&B:</strong> "Someone holds Power in this community"</li>
+                <li><strong>Street Magic:</strong> Create the Merchant Prince as a Resident, give them a landmark (their trading house), run vignette to establish their true name</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary><strong>With Microscope Chronicle Anchors</strong></summary>
+        <div class="content-inner">
+            <p>If using Chronicle for settlement history, <strong>Anchors</strong> are recurring characters across time periods. Use Street Magic's resident procedure to detail them:</p>
+            <ul>
+                <li>Chronicle establishes they exist and their role in events</li>
+                <li>Street Magic adds sensory details and personality through vignettes</li>
+            </ul>
+        </div>
+    </details>
+
+    <h4>Recording Residents</h4>
+    <p>Each resident becomes a wiki page with:</p>
+    <ul>
+        <li><strong>Title & Pronouns</strong></li>
+        <li><strong>True Name</strong> (the key details from vignette)</li>
+        <li><strong>Affiliated Landmark</strong> (where to find them)</li>
+        <li><strong>Relationships</strong> (connections to other residents/factions)</li>
+        <li><strong>Session Appearances</strong> (when players interacted with them)</li>
+    </ul>
+
+    <div class="callout">
+        <div class="callout-title">Why This Works</div>
+        <p>Collaborative vignettes make NPCs <strong>memorable</strong>. Players helped create them, so they're invested. The true name gives the DM easy recall during play. The landmark connection means players always know where to find them.</p>
+    </div>
+</section>
+
+<section id="settlement-threats">
+    <h3>Settlement Threats (Optional)</h3>
+    
+    <p>Some settlements have unique threats that emerge from faction actions. Unlike random encounters, these threats are <strong>consequences</strong> of political choices made during settlement creation.</p>
+
+    <div class="callout philosophy">
+        <div class="callout-title">Consequences, Not Random Encounters</div>
+        <p>A settlement-specific threat isn't "there happens to be a dragon nearby." It's "The Miners dug too deep seeking profit, and awakened something they shouldn't have." The threat is <em>integrated</em> into the settlement's story.</p>
+    </div>
+
+    <h4>When to Generate Settlement Threats</h4>
+    <ul>
+        <li><strong>Always:</strong> For session zero hometowns (creates immediate campaign hook)</li>
+        <li><strong>Sometimes:</strong> For major settlements (adds regional danger)</li>
+        <li><strong>Rarely:</strong> For minor settlements (not everything needs a threat)</li>
+        <li><strong>On Request:</strong> When players want built-in adventure hook</li>
+    </ul>
+
+    <h4>Threat Generation Procedure</h4>
+    <p>After defining factions and buildings, identify which faction action attracted the threat:</p>
+
+    <div class="procedure">
+        <div class="procedure-step">
+            <h4>Step 1: Identify Dominant Faction</h4>
+            <p>Which faction claimed the most buildings or controls the Seat of Power? That's your catalyst faction.</p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>Step 2: Determine Action Type</h4>
+            <p>What kind of buildings did they claim most? Look at the temporal frames:</p>
+            <ul>
+                <li><strong>♥ Social dominance:</strong> Ritual, mass gathering, or worship attracted something</li>
+                <li><strong>♦ Financial dominance:</strong> Greed, exploitation, or trade awakened/summoned threat</li>
+                <li><strong>♣ Future dominance:</strong> Ambitious experiment or preparation went wrong</li>
+                <li><strong>♠ Past dominance:</strong> Disturbed ruins, broke seals, stole artifacts</li>
+            </ul>
+        </div>
+
+        <div class="procedure-step">
+            <h4>Step 3: Describe the Action</h4>
+            <p>The person who created/played that faction describes <strong>what specific action</strong> their faction took that caused the threat.</p>
+            <p><strong>Example:</strong> "The Miners, seeking rare crystals, broke through into an ancient sealed chamber beneath the mountains."</p>
+        </div>
+
+        <div class="procedure-step">
+            <h4>Step 4: Collaborative Monster Design</h4>
+            <p>Everyone else (or the DM alone if working solo) contributes elements of the resulting threat. Each person adds one aspect:</p>
+            <ul>
+                <li>Physical appearance or form</li>
+                <li>Behavior or movement pattern</li>
+                <li>What it wants or needs</li>
+                <li>Special ability or danger</li>
+                <li>Weakness or vulnerability</li>
+                <li>Connection to the inciting action</li>
+                <li>Environmental effects or omens</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>Example Threat: The Miners' Consequence</h4>
+    <p><strong>Faction:</strong> Miners (dominant ♦ Financial)<br>
+    <strong>Action:</strong> "Dug too deep seeking rare ore, broke into sealed vault"<br>
+    <strong>Threat Elements:</strong></p>
+    <ul>
+        <li><em>Appearance:</em> Stone elemental incorporating mined crystals into its body as armor</li>
+        <li><em>Behavior:</em> Seeks to seal the breach and reclaim stolen minerals</li>
+        <li><em>Want:</em> Return of all ore taken from the vault</li>
+        <li><em>Ability:</em> Causes earthquakes when angered</li>
+        <li><em>Weakness:</em> Can be reasoned with if miners return what was taken</li>
+        <li><em>Connection:</em> Each stolen crystal makes it stronger</li>
+    </ul>
+
+    <h4>Threat Scope & Resolution</h4>
+    <p>Settlement threats don't need immediate resolution:</p>
+    <ul>
+        <li><strong>Campaign Arc:</strong> Threat looms over multiple sessions</li>
+        <li><strong>Background Danger:</strong> Consequences of ignoring it accumulate</li>
+        <li><strong>Faction Shift:</strong> Resolving threat changes power balance (faction that caused it may lose Seat of Power)</li>
+        <li><strong>Regional Impact:</strong> Unresolved threats can spread to adjacent hexes</li>
+    </ul>
+
+    <div class="callout tip">
+        <div class="callout-title">Stat the Threat Separately</div>
+        <p>The settlement generation process creates the <em>concept</em> of the threat. Use your system's monster creation rules to stat it when players actually engage with it. Scale to party level at that time.</p>
+    </div>
+
+    <h4>Faction-Threat Matrix (Quick Reference)</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Faction</th>
+                <th>♥ Social</th>
+                <th>♦ Financial</th>
+                <th>♣ Future</th>
+                <th>♠ Past</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Mages</strong></td>
+                <td>Summoning ritual</td>
+                <td>Magical theft</td>
+                <td>Experiment disaster</td>
+                <td>Curse awakened</td>
+            </tr>
+            <tr>
+                <td><strong>Miners</strong></td>
+                <td>Worker uprising</td>
+                <td>Dug too deep</td>
+                <td>Unstable excavation</td>
+                <td>Broke sealed vault</td>
+            </tr>
+            <tr>
+                <td><strong>Clerics</strong></td>
+                <td>Mass worship</td>
+                <td>Temple wealth curse</td>
+                <td>Zealot prophecy</td>
+                <td>Heresy punishment</td>
+            </tr>
+            <tr>
+                <td><strong>Thieves</strong></td>
+                <td>Stolen sacred item</td>
+                <td>Guild war violence</td>
+                <td>Heist preparation</td>
+                <td>Wrong tomb opened</td>
+            </tr>
+            <tr>
+                <td><strong>Strangers</strong></td>
+                <td>Outsider knowledge</td>
+                <td>Introduced parasite</td>
+                <td>Portal opened</td>
+                <td>Brought old enemy</td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
