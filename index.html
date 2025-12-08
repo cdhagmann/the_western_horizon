@@ -9,22 +9,77 @@ title: The Western Horizon
     <div class="version">Version {{ site.version }} — Draft</div>
 </header>
 
-{% include 00-overview.html %}
+<section class="intro">
+    <p>The Western Horizon is a framework for running collaborative West Marches campaigns where the world is built <em>reactively</em>—generated in response to player intent rather than pre-planned.</p>
 
-{% include 01-session-zero.html %}
+    <p>Instead of preparing a full world in advance, you create content when players declare what they want to explore. "I want to investigate the ruins in the swamp" triggers the creation of those ruins, which then become permanent canon for all players.</p>
+</section>
 
-{% include 02-settlements.html %}
+<section class="toc-grid">
+    <h2>Framework Sections</h2>
 
-{% include 03-wilderness.html %}
+    <div class="card-grid">
+        <a href="{{ '/sections/overview' | relative_url }}" class="card card-link">
+            <div class="card-icon">📜</div>
+            <div class="card-title">Overview</div>
+            <div class="card-content">Core philosophy, design principles, and systems overview.</div>
+        </a>
 
-{% include 04-dungeons.html %}
+        <a href="{{ '/sections/session-zero' | relative_url }}" class="card card-link">
+            <div class="card-icon">🧭</div>
+            <div class="card-title">I. Session Zero</div>
+            <div class="card-content">Charting the Horizon — establishing your campaign's foundation.</div>
+        </a>
 
-{% include 05-quest-prep.html %}
+        <a href="{{ '/sections/settlements' | relative_url }}" class="card card-link">
+            <div class="card-icon">🏘️</div>
+            <div class="card-title">II. Settlements</div>
+            <div class="card-content">Creating towns, cities, and population centers.</div>
+        </a>
 
-{% include 06-sessions.html %}
+        <a href="{{ '/sections/wilderness' | relative_url }}" class="card card-link">
+            <div class="card-icon">🌲</div>
+            <div class="card-title">III. Wilderness</div>
+            <div class="card-content">Beyond the Horizon — terrain, discoveries, and travel.</div>
+        </a>
 
-{% include 07-wiki.html %}
+        <a href="{{ '/sections/dungeons' | relative_url }}" class="card card-link">
+            <div class="card-icon">🏚️</div>
+            <div class="card-title">IV. Dungeons</div>
+            <div class="card-content">What Lies Beneath — adventure sites and ruins.</div>
+        </a>
 
-{% include 08-appendices.html %}
+        <a href="{{ '/sections/quest-prep' | relative_url }}" class="card card-link">
+            <div class="card-icon">📋</div>
+            <div class="card-title">V. Quest Prep</div>
+            <div class="card-content">The Guild at Work — preparing content from player intent.</div>
+        </a>
+
+        <a href="{{ '/sections/sessions' | relative_url }}" class="card card-link">
+            <div class="card-icon">🎲</div>
+            <div class="card-title">VI. Running Sessions</div>
+            <div class="card-content">At the Table — procedures for play and recording.</div>
+        </a>
+
+        <a href="{{ '/sections/wiki' | relative_url }}" class="card card-link">
+            <div class="card-icon">📚</div>
+            <div class="card-title">VII. Guild Archive</div>
+            <div class="card-content">Maintaining the living wiki of campaign knowledge.</div>
+        </a>
+
+        <a href="{{ '/sections/appendices' | relative_url }}" class="card card-link">
+            <div class="card-icon">🎲</div>
+            <div class="card-title">Appendices</div>
+            <div class="card-content">Oracle tables, quick reference, and source systems.</div>
+        </a>
+    </div>
+</section>
+
+<section class="getting-started">
+    <h2>Getting Started</h2>
+    <p>New to The Western Horizon? Start with the <a href="{{ '/sections/overview' | relative_url }}">Overview</a> to understand the core philosophy, then proceed to <a href="{{ '/sections/session-zero' | relative_url }}">Session Zero</a> to begin your campaign.</p>
+
+    <a href="{{ '/sections/overview' | relative_url }}" class="btn btn-primary">Begin Reading →</a>
+</section>
 
 {% include footer.html %}
