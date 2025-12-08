@@ -8,11 +8,15 @@
         </a>
     </div>
 
-    <div class="nav-section">
-        <a href="{{ '/sections/overview' | relative_url }}" class="nav-link {% if page.url contains 'overview' %}active{% endif %}">
-            Overview
-        </a>
-    </div>
+    <details class="nav-section collapsible" {% if page.url contains 'overview' %}open{% endif %}>
+        <summary class="nav-section-title">Overview</summary>
+        <div class="nav-section-content">
+            <a href="{{ '/sections/overview' | relative_url }}" class="nav-link {% if page.url contains 'overview' %}active{% endif %}">Introduction</a>
+            <a href="{{ '/sections/overview' | relative_url }}#philosophy" class="nav-link sub">Core Philosophy</a>
+            <a href="{{ '/sections/overview' | relative_url }}#goals-not-hooks" class="nav-link sub">Goals Over Hooks</a>
+            <a href="{{ '/sections/overview' | relative_url }}#systems-overview" class="nav-link sub">Systems Overview</a>
+        </div>
+    </details>
 
     <details class="nav-section collapsible" {% if page.url contains 'session-zero' %}open{% endif %}>
         <summary class="nav-section-title">I. Charting the Horizon</summary>
@@ -97,6 +101,7 @@
             <a href="{{ '/sections/appendices' | relative_url }}#appendix-solo" class="nav-link sub">Solo Procedures</a>
             <a href="{{ '/sections/appendices' | relative_url }}#appendix-reference" class="nav-link sub">Quick Reference</a>
             <a href="{{ '/sections/appendices' | relative_url }}#appendix-sources" class="nav-link sub">Source Systems</a>
+            <a href="{{ '/sections/appendices' | relative_url }}#appendix-resources" class="nav-link sub">Resources</a>
         </div>
     </details>
 </nav>
