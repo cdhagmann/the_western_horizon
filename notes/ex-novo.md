@@ -52,7 +52,7 @@ Ex Novo scales settlements through six tiers (Village to Metropolis), each defin
 
 **For WH Integration:** Map directly to WH tiers:
 - **Tier 1-4 (Village):** Nestling/Budding age, 6-9 regions, sparse population
-- **Tier 5-10 (Town):** Grown age, 9-12 regions, moderate density  
+- **Tier 5-10 (Town):** Grown age, 9-12 regions, moderate density
 - **Tier 11-16 (City):** Aged/Elderly, 12-18 regions, high density
 - **Tier 17+ (Capital):** Ancient, 20+ regions, metropolis density
 
@@ -168,7 +168,7 @@ The timeline tracks all Development Phase events chronologically, providing a hi
 
 ### Streamlined Generation
 **Original:** Full 4-phase playthrough with dice rolls
-**WH Adaptation:** 
+**WH Adaptation:**
 - **For Starting Settlement:** Use full generation once at Session Zero
 - **For New Settlements:** Use Founding Phase only, then place 2-4 Development events based on tier
 - **For Background Settlements:** Use quick-start tables only (Geography + Location + 2 Factions)
@@ -271,7 +271,7 @@ Use Ex Novo's scale tables but align to WH tiers:
 **All tables in Ex Novo use 2d6:**
 
 - **Terrain–Geography** (p. 36): Major landscape type
-- **Terrain–Features** (p. 37): 4x topographic details  
+- **Terrain–Features** (p. 37): 4x topographic details
 - **Purpose–Location** (p. 38): Founding resource
 - **Purpose–Decision** (p. 39): Why settlement exists
 - **Power–Paradigm** (p. 40): First faction nature
@@ -359,7 +359,7 @@ Claude Projects can process session recordings: "Extract all references to River
 
 ### Pitfall: Ignoring Generated History
 **Problem:** Cool timeline events get forgotten, serve no purpose
-**Solution:** 
+**Solution:**
 - Pull 2-3 events as explicit adventure hooks before each arc
 - Give NPCs memories of past events ("I remember the fire...")
 - Make landmarks physically reflect their history
@@ -406,6 +406,6 @@ Claude Projects can process session recordings: "Extract all references to River
 
 ---
 
-*Last updated: 2024-12-07*
+*Last updated: 2025-12-07*
 *Processed from: ExNovo.pdf (2nd Edition)*
 *Integration Status: Conceptual framework complete, mechanical adaptation needed for tables*

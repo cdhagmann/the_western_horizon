@@ -1,9 +1,9 @@
 # The Game Master's Handbook of Proactive Roleplaying
 
-> **Authors:** Jonah and Tristan Fishel  
-> **Publisher:** Media Lab Books  
-> **Pages:** 240  
-> **Published:** October 17, 2023  
+> **Authors:** Jonah and Tristan Fishel
+> **Publisher:** Media Lab Books
+> **Pages:** 240
+> **Published:** October 17, 2023
 > **ISBN:** 978-1-956403-44-2
 
 ## Overview
@@ -12,8 +12,8 @@ A framework for shifting TTRPG play from GM-driven storylines to player-driven g
 
 ## Role in The Western Horizon
 
-**Primary Scale:** Meta/Framework (applies to all scales)  
-**Used For:** Goal-driven play structure, faction clock mechanics, encounter design philosophy  
+**Primary Scale:** Meta/Framework (applies to all scales)
+**Used For:** Goal-driven play structure, faction clock mechanics, encounter design philosophy
 **Sections Updated:** `00-overview.html`, `01-session-zero.html`, `02-settlements.html`, `05-quest-prep.html`
 
 ## Core Philosophy
@@ -221,5 +221,5 @@ For The Western Horizon:
 
 ---
 
-*Last updated: December 2024*  
+*Last updated: December 2025*
 *Source: Book review and summary, not direct PDF*
