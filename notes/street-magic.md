@@ -1,8 +1,13 @@
+---
+layout: default
+title: "Street Magic"
+---
+
 # Street Magic Notes
 
-**System:** I'm Sorry Did You Say Street Magic  
-**Author:** Caro Asercion  
-**Supplement:** Easy Streets anthology  
+**System:** I'm Sorry Did You Say Street Magic
+**Author:** Caro Asercion
+**Supplement:** Easy Streets anthology
 **Use Case:** Collaborative building-scale worldbuilding
 
 ---
@@ -15,7 +20,7 @@ When Hexmancer generates a feature (temple, wizard's tower, village) or when pla
 ### The Three-Tier Structure
 Street Magic builds cities through nested cards:
 - **Neighborhoods** → Broad areas with reputation and vibe
-- **Landmarks** → Specific buildings/locations within neighborhoods  
+- **Landmarks** → Specific buildings/locations within neighborhoods
 - **Residents** → Individual NPCs associated with landmarks
 
 ---
@@ -122,7 +127,7 @@ Street Magic's full game includes:
 - **Compass:** Thematic focus for a round ("gentrification," "night markets," "found family")
 - **Events:** Changes to the city after exploration
 
-**For Western Horizon:** 
+**For Western Horizon:**
 Skip Compass/Events for initial landmark generation. **Use them for:**
 - Session Zero settlement creation (full collaborative session)
 - Between-arc "city evolves" updates
@@ -160,7 +165,7 @@ Skip Compass/Events for initial landmark generation. **Use them for:**
 **Used when:** Players ask "who runs this place?"
 
 1. **Title & Pronouns:** Quick decision
-2. **Collaborative Vignette:** 
+2. **Collaborative Vignette:**
    - DM: "Let's see them in their element. Where are they and what are they doing?"
    - Players contribute: "I see them..." "I hear..." "They're holding..."
    - Stop when you have their **true name**
@@ -170,9 +175,9 @@ Skip Compass/Events for initial landmark generation. **Use them for:**
 
 ## What Street Magic Doesn't Do
 
-❌ Generate settlement-scale geography (use Ex Novo)  
-❌ Track faction relationships (use Ex Novo/Kingdom/BF&B)  
-❌ Handle dungeon interiors (use Ex Umbra)  
+❌ Generate settlement-scale geography (use Ex Novo)
+❌ Track faction relationships (use Ex Novo/Kingdom/BF&B)
+❌ Handle dungeon interiors (use Ex Umbra)
 ❌ Manage settlement mechanics (use Ex Novo "needs")
 
 ---

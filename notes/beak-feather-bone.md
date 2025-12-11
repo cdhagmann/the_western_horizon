@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Beak, Feather & Bone"
+---
+
 # Beak, Feather & Bone
 
 > **Author:** Tyler Crumrine, Jonathan Yee, Austin Breed
@@ -12,8 +17,8 @@ A map-labeling game where players claim buildings on an unlabeled city map throu
 
 ## Role in The Western Horizon
 
-**Primary Scale:** Settlement  
-**Used For:** Generating towns/cities with factional politics and built-in plot hooks  
+**Primary Scale:** Settlement
+**Used For:** Generating towns/cities with factional politics and built-in plot hooks
 **Sections Updated:** `02-settlements.html`, `03-factions.html`, `04-npcs.html`
 
 ## Why This System Fits Western Horizon
@@ -80,8 +85,8 @@ Jack/Queen/King = 0 influence BUT also create a **Rival** from opposing faction:
 
 ### Quick Settlement Generation (15-30 min)
 
-**When to use:** Party discovers unnamed settlement mid-session  
-**Duration:** 15-30 minutes  
+**When to use:** Party discovers unnamed settlement mid-session
+**Duration:** 15-30 minutes
 **Output:** 4-6 defined buildings with one conflict hook
 
 **Steps:**
@@ -94,8 +99,8 @@ Jack/Queen/King = 0 influence BUT also create a **Rival** from opposing faction:
 
 ### Full Settlement Development (2-4 hours)
 
-**When to use:** Session zero hometown, major campaign hub, downtime activity  
-**Duration:** 2-4 hours  
+**When to use:** Session zero hometown, major campaign hub, downtime activity
+**Duration:** 2-4 hours
 **Output:** 25-40 buildings, complex political web, multiple NPCs
 
 **Steps:**
@@ -108,8 +113,8 @@ Jack/Queen/King = 0 influence BUT also create a **Rival** from opposing faction:
 
 ### Ongoing Settlement Evolution
 
-**When to use:** Settlement grows with campaign  
-**Duration:** 5-10 minutes per session  
+**When to use:** Settlement grows with campaign
+**Duration:** 5-10 minutes per session
 **Output:** 1-2 new buildings per session
 
 **Steps:**
@@ -193,5 +198,5 @@ Jack/Queen/King = 0 influence BUT also create a **Rival** from opposing faction:
 
 ---
 
-*Last updated: 2025-12-07*  
+*Last updated: 2025-12-07*
 *Processed from: Beak_Feather_and_Bone__Digital_and_Print.pdf*

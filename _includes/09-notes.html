@@ -1,0 +1,52 @@
+<header class="section-header">
+    <h1>🗒️ Notes & Drafts</h1>
+    <p class="section-subtitle">Research materials, system notes, and work-in-progress drafts</p>
+    <p class="hidden-note"><em>This section is not linked from the main navigation.</em></p>
+</header>
+
+<section id="notes-reference">
+    <h2>System Reference Notes</h2>
+    <p>Notes on games and systems that inform The Western Horizon framework.</p>
+
+    <div class="notes-grid">
+        {% assign note_pages = site.pages | where_exp: "page", "page.path contains 'notes/'" %}
+        {% for page in note_pages %}
+            {% unless page.name == '_template.md' or page.name == '_prompt.md' %}
+            <a href="{{ page.url | relative_url }}" class="note-card">
+                <span class="note-icon">📄</span>
+                <span class="note-title">{{ page.title | default: page.name | replace: '.md', '' | replace: '-', ' ' }}</span>
+            </a>
+            {% endunless %}
+        {% endfor %}
+    </div>
+</section>
+
+<section id="notes-drafts">
+    <h2>Drafts</h2>
+    <p>Work-in-progress content and implementation notes.</p>
+
+    <div class="notes-grid">
+        {% assign draft_pages = site.pages | where_exp: "page", "page.path contains 'drafts/'" %}
+        {% for page in draft_pages %}
+            <a href="{{ page.url | relative_url }}" class="note-card draft">
+                <span class="note-icon">📝</span>
+                <span class="note-title">{{ page.title | default: page.name | replace: '.md', '' | replace: '-', ' ' }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="notes-handouts">
+    <h2>Handouts</h2>
+    <p>Player-facing reference materials.</p>
+
+    <div class="notes-grid">
+        {% assign handout_pages = site.pages | where_exp: "page", "page.path contains 'handouts/'" %}
+        {% for page in handout_pages %}
+            <a href="{{ page.url | relative_url }}" class="note-card handout">
+                <span class="note-icon">📋</span>
+                <span class="note-title">{{ page.title | default: page.name | replace: '.md', '' | replace: '-', ' ' }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</section>

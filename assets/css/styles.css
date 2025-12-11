@@ -968,3 +968,61 @@ details .content-inner {
     }
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   NOTES SECTION (Hidden)
+   ═══════════════════════════════════════════════════════════════ */
+
+.hidden-note {
+    background: var(--parchment-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--ink-faded);
+    display: inline-block;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.note-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--parchment-light);
+    border: 1px solid var(--parchment-dark);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.2s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-gold);
+}
+
+.note-card.draft {
+    border-left: 3px solid var(--pending);
+}
+
+.note-card.handout {
+    border-left: 3px solid var(--success);
+}
+
+.note-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.note-title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}

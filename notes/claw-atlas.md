@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Claw Atlas"
+---
+
 # Claw Atlas
 
 > **Author:** Tyler Crumrine, Jonathan Yee, Austin Breed
@@ -12,8 +17,8 @@ Expansion for Beak, Feather & Bone adding two major variants: **The Hunters** (f
 
 ## Role in The Western Horizon
 
-**Primary Scale:** Settlement (same as BF&B)  
-**Used For:** Adding consequence/threat layer to settlements + zero-prep map generation  
+**Primary Scale:** Settlement (same as BF&B)
+**Used For:** Adding consequence/threat layer to settlements + zero-prep map generation
 **Sections Updated:** `02-settlements.html` (Mapmakers), `06-threats.html` (Hunters)
 
 ## Why These Variants Matter for Western Horizon
@@ -29,7 +34,7 @@ Expansion for Beak, Feather & Bone adding two major variants: **The Hunters** (f
 - **♣ Future:** Ambitious experiment or reckless preparation went wrong
 - **♠ Past:** Disturbed ruins, broke seals, or stole artifacts
 
-**For West Marches:** 
+**For West Marches:**
 - Every settlement gets unique, plot-integrated threat
 - Different parties approach same threat differently based on factional alliances
 - Threats don't feel "random"—they're consequences of political choices made during settlement generation
@@ -42,7 +47,7 @@ Expansion for Beak, Feather & Bone adding two major variants: **The Hunters** (f
 
 **Method 1: Drawing** - Card values dictate geometric shapes
 - Aces = draw suit symbol (♥♦♣♠)
-- 2 = shape with 2 parallel lines  
+- 2 = shape with 2 parallel lines
 - 3-10 = shape with that many sides
 - Jack = must be adjacent to existing shape
 - Queen = must be isolated from all shapes
@@ -103,8 +108,8 @@ The Mapmakers' face card rules create geography that **means something**:
 
 ### The Hunters Variant (Threat Generation)
 
-**When to use:** After any BF&B settlement generation when you want immediate adventure hook  
-**Duration:** 15 minutes after BF&B session  
+**When to use:** After any BF&B settlement generation when you want immediate adventure hook
+**Duration:** 15 minutes after BF&B session
 **Output:** Settlement-specific threat with clear cause
 
 **Steps:**
@@ -120,8 +125,8 @@ The Mapmakers' face card rules create geography that **means something**:
 
 ### The Mapmakers Variant (Procedural Generation)
 
-**When to use:** No time to prep map, want organic emergence, zero-prep session  
-**Duration:** Same as normal BF&B (map grows as you play)  
+**When to use:** No time to prep map, want organic emergence, zero-prep session
+**Duration:** Same as normal BF&B (map grows as you play)
 **Output:** Unique map with meaningful spatial relationships
 
 **Method A: Drawing**
@@ -142,8 +147,8 @@ The Mapmakers' face card rules create geography that **means something**:
 
 ### Combined Variant (Hunters + Mapmakers)
 
-**When to use:** Maximum improvisation—no prep, immediate adventure hook  
-**Duration:** 2-4 hours  
+**When to use:** Maximum improvisation—no prep, immediate adventure hook
+**Duration:** 2-4 hours
 **Output:** Complete settlement package (map + factions + threat)
 
 **Steps:**
@@ -152,7 +157,7 @@ The Mapmakers' face card rules create geography that **means something**:
 3. End with Hunters variant threat generation
 4. Spatial relationships on map inform monster behavior
 
-**Example:** Queen card isolated a building → That becomes the monster's lair  
+**Example:** Queen card isolated a building → That becomes the monster's lair
 **Example:** King card nested a structure → Monster is contained there (for now)
 
 **Result:** Settlement map, political structure, and adventure seed all generated in single session with zero prep.
@@ -251,5 +256,5 @@ The Mapmakers' face card rules create geography that **means something**:
 
 ---
 
-*Last updated: 2025-12-07*  
+*Last updated: 2025-12-07*
 *Processed from: Claw_Atlas__Digital_and_Print.pdf*

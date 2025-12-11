@@ -1,7 +1,12 @@
+---
+layout: default
+title: "Mystic Arts: Political Factions"
+---
+
 # Mystic Arts: Political Factions Framework
 
-**Source:** Di (Mystic Arts) - "Do you want political games?"  
-**Video:** https://www.youtube.com/watch?v=Hnr6Mr1436M  
+**Source:** Di (Mystic Arts) - "Do you want political games?"
+**Video:** https://www.youtube.com/watch?v=Hnr6Mr1436M
 **Key Concept:** Three-faction (good, bad, ugly) framework for creating politically complex campaigns
 
 ## Core Framework: Six Steps to Political Complexity
@@ -99,7 +104,7 @@ Once you understand the pattern, you can apply it at any scale. Players experien
 
 ## Key Takeaway for Western Horizon
 
-This framework is **perfectly aligned with WH's faction-driven approach**: 
+This framework is **perfectly aligned with WH's faction-driven approach**:
 - Factions have goals and methods independent of player action
 - Political complexity emerges from faction conflict, not GM plotting
 - The three-faction rule makes generation fast but results feel intricate

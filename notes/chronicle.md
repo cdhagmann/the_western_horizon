@@ -1,8 +1,13 @@
+---
+layout: default
+title: "Microscope: Chronicle"
+---
+
 # Microscope: Chronicle Notes
 
-**System:** Microscope: Chronicle (Playtest 2025)  
-**Author:** Ben Robbins  
-**Status:** PRIMARY history system for Western Horizon  
+**System:** Microscope: Chronicle (Playtest 2025)
+**Author:** Ben Robbins
+**Status:** PRIMARY history system for Western Horizon
 **Use Case:** Single-location history (settlement, object, organization)
 
 ---
@@ -340,7 +345,7 @@ Palette serves double duty: history creation + Session Zero
 
 ## The Tiered Approach Summary
 
-**Tier 1-2 (Levels 1-10):** 
+**Tier 1-2 (Levels 1-10):**
 - Chronicle for settlement history
 - Scope: This place, these people
 - Duration: 1-3 hours

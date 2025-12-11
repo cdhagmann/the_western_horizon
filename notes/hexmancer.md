@@ -1,7 +1,12 @@
+---
+layout: default
+title: "Hexmancer"
+---
+
 # Hexmancer Notes (Optional Appendix)
 
-**System:** Hexmancer v1.2  
-**Author:** Martin Ralya (Traverse Fantasy)  
+**System:** Hexmancer v1.2
+**Author:** Martin Ralya (Traverse Fantasy)
 **Status:** Optional hexcrawl supplement - NOT core to WH
 
 ---
@@ -33,7 +38,7 @@ If your table wants detailed exploration where the journey IS the content, Hexma
 
 **Random Waypoint Seeding:**
 Use the d20 feature table to quickly generate discoveries during travel:
-- Roll when Travel Complications gives "Major Discovery"  
+- Roll when Travel Complications gives "Major Discovery"
 - Wizard tower (11-12), Temple (13-14), Castle (15-17) become waypoints
 - Hand off to Street Magic for detailing
 
@@ -87,7 +92,7 @@ Keep the three-dice method in an appendix:
 **Replace Part III** with destination-focused travel:
 - When to montage vs. zoom in
 - Complications table (d20)
-- Waypoints table (d12) 
+- Waypoints table (d12)
 - Encounters table (d12)
 - Weather table (d12)
 - Travel times by terrain

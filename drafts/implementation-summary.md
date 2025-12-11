@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Implementation Summary"
+---
+
 # Implementation Plan: Player Expectations & Character Creation Section
 
 ## Overview

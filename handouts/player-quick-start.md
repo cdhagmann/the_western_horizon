@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Player Quick Start"
+---
+
 # Quick Start: Playing in The Western Horizon
 ## A 2-Page Player Guide
 
@@ -6,7 +11,7 @@
 ## What Makes This Different
 
 ### You Drive the Story
-**Traditional D&D:** GM creates hooks → You choose → GM runs prepared content  
+**Traditional D&D:** GM creates hooks → You choose → GM runs prepared content
 **Western Horizon:** You declare goals → GM creates obstacles → Story emerges
 
 **What this means:** Come to the table (or planning chat) knowing what your character wants. If you don't have goals, the campaign feels directionless—not because content is missing, but because content generation waits for YOUR direction.
@@ -35,14 +40,14 @@ Each character needs goals at any time. These drive everything.
 | **Long-term** | Campaign arc | "Restore my family's honor" |
 
 ### Goal Quality Checklist
-✓ **Player-authored** — YOU invented it  
-✓ **Specific endpoint** — "Win tournament" not "get stronger"  
-✓ **Clear consequences** — You know what failure costs  
-✓ **Non-repeatable** — Can't just try again  
-✓ **Fun to pursue** — You can imagine obstacles  
+✓ **Player-authored** — YOU invented it
+✓ **Specific endpoint** — "Win tournament" not "get stronger"
+✓ **Clear consequences** — You know what failure costs
+✓ **Non-repeatable** — Can't just try again
+✓ **Fun to pursue** — You can imagine obstacles
 ✓ **Connected to character** — Relates to who they are
 
-**Bad goal:** "Become more powerful to protect people" (vague, repeatable, generic)  
+**Bad goal:** "Become more powerful to protect people" (vague, repeatable, generic)
 **Good goal:** "Win Grand Tournament so Su-Li will marry me, but if I lose, her family betroths her to Lord Ravencroft" (specific, consequential, non-repeatable, connected)
 
 ---
@@ -55,7 +60,7 @@ Each character needs goals at any time. These drive everything.
 3. **Fill Character Form** — Capture personality, approaches, NPCs, etc.
 4. **Connect to World** — Which factions care? What locations matter?
 
-**Traditional:** Pick class → invent personality → find motivation  
+**Traditional:** Pick class → invent personality → find motivation
 **Western Horizon:** Envision goals → design character who'd pursue them → select mechanics that fit
 
 ### The Magic Question

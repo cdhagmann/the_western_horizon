@@ -28,6 +28,19 @@
         </div>
     </details>
 
+    <details class="nav-section collapsible" {% if page.url contains 'player-guide' %}open{% endif %}>
+        <summary class="nav-section-title">I-A. The Player's Compass</summary>
+        <div class="nav-section-content">
+            <a href="{{ '/sections/player-guide' | relative_url }}" class="nav-link {% if page.url contains 'player-guide' %}active{% endif %}">Player Guide</a>
+            <a href="{{ '/sections/player-guide' | relative_url }}#what-makes-different" class="nav-link sub">What Makes This Different</a>
+            <a href="{{ '/sections/player-guide' | relative_url }}#player-role" class="nav-link sub">Your Role</a>
+            <a href="{{ '/sections/player-guide' | relative_url }}#character-creation" class="nav-link sub">Character Creation</a>
+            <a href="{{ '/sections/player-guide' | relative_url }}#between-sessions" class="nav-link sub">Between Sessions</a>
+            <a href="{{ '/sections/player-guide' | relative_url }}#during-expeditions" class="nav-link sub">During Expeditions</a>
+            <a href="{{ '/sections/player-guide' | relative_url }}#common-pitfalls" class="nav-link sub">Common Pitfalls</a>
+        </div>
+    </details>
+
     <details class="nav-section collapsible" {% if page.url contains 'settlements' %}open{% endif %}>
         <summary class="nav-section-title">II. Settlements on the Horizon</summary>
         <div class="nav-section-content">

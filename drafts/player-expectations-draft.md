@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Player Expectations Draft"
+---
+
 # Player Expectations & Character Creation
 ## Draft for The Western Horizon
 
@@ -670,6 +675,7 @@ Create `/Users/christopherhagmann/Projects/Personal/the_western_horizon/_include
 
 Create `/Users/christopherhagmann/Projects/Personal/the_western_horizon/sections/player-guide.html` with:
 
+{% raw %}
 ```html
 ---
 layout: section
@@ -684,6 +690,7 @@ next_title: Settlements
 
 {% include 01a-player-guide.html %}
 ```
+{% endraw %}
 
 ### Additional Changes Needed
 

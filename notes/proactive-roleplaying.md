@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Proactive Roleplaying"
+---
+
 # The Game Master's Handbook of Proactive Roleplaying
 
 > **Authors:** Jonah and Tristan Fishel

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Ex Novo"
+---
+
 # Ex Novo
 
 > **Authors:** Martin Nerurkar & Konstantinos Dimopoulos
