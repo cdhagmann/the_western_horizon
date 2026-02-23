@@ -57,11 +57,12 @@
     <details class="nav-section collapsible" {% if page.url contains 'wilderness' %}open{% endif %}>
         <summary class="nav-section-title">III. Beyond the Horizon</summary>
         <div class="nav-section-content">
-            <a href="{{ '/sections/wilderness' | relative_url }}" class="nav-link {% if page.url contains 'wilderness' %}active{% endif %}">Wilderness</a>
-            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-terrain" class="nav-link sub">Terrain Generation</a>
-            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-discoveries" class="nav-link sub">Points of Interest</a>
-            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-dangers" class="nav-link sub">Dangers & Encounters</a>
-            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-travel" class="nav-link sub">Travel Procedures</a>
+            <a href="{{ '/sections/wilderness' | relative_url }}" class="nav-link {% if page.url contains 'wilderness' %}active{% endif %}">The Hex Map & Travel</a>
+            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-terrain" class="nav-link sub">Seeded Discovery Pool</a>
+            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-discoveries" class="nav-link sub">Delivery Channels</a>
+            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-dangers" class="nav-link sub">Complications & Encounters</a>
+            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-travel" class="nav-link sub">Waypoints & Weather</a>
+            <a href="{{ '/sections/wilderness' | relative_url }}#wilderness-progression" class="nav-link sub">Hex Map Progression</a>
         </div>
     </details>
 
@@ -90,6 +91,8 @@
         <summary class="nav-section-title">VI. At the Table</summary>
         <div class="nav-section-content">
             <a href="{{ '/sections/sessions' | relative_url }}" class="nav-link {% if page.url contains '/sessions' %}active{% endif %}">Running Sessions</a>
+            <a href="{{ '/sections/sessions' | relative_url }}#session-structure" class="nav-link sub">Five Room Structure</a>
+            <a href="{{ '/sections/sessions' | relative_url }}#session-expeditions" class="nav-link sub">Expedition Types</a>
             <a href="{{ '/sections/sessions' | relative_url }}#session-recording" class="nav-link sub">Recording & Notes</a>
             <a href="{{ '/sections/sessions' | relative_url }}#session-discoveries" class="nav-link sub">Logging Discoveries</a>
             <a href="{{ '/sections/sessions' | relative_url }}#session-aftermath" class="nav-link sub">Post-Session Duties</a>
@@ -103,6 +106,16 @@
             <a href="{{ '/sections/wiki' | relative_url }}#wiki-templates" class="nav-link sub">Entry Templates</a>
             <a href="{{ '/sections/wiki' | relative_url }}#wiki-workflow" class="nav-link sub">Update Workflow</a>
             <a href="{{ '/sections/wiki' | relative_url }}#wiki-claude" class="nav-link sub">Claude Integration</a>
+        </div>
+    </details>
+
+    <details class="nav-section collapsible" {% if page.url contains '/blog' %}open{% endif %}>
+        <summary class="nav-section-title">Design Blog</summary>
+        <div class="nav-section-content">
+            <a href="{{ '/blog' | relative_url }}" class="nav-link {% if page.url == '/blog/' %}active{% endif %}">All Posts</a>
+            {% for post in site.posts limit:5 %}
+            <a href="{{ post.url | relative_url }}" class="nav-link sub {% if page.url == post.url %}active{% endif %}">{{ post.title | truncatewords: 6 }}</a>
+            {% endfor %}
         </div>
     </details>
 
